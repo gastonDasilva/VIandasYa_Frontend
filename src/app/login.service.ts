@@ -24,17 +24,11 @@ export class LoginService {
     // Pass to next layer of middleware*/
 
   login(userEmail: string, pass: string) {
-    const headers = new HttpHeaders({
-      'Access-Control-Allow-Origin': 'http://localhost:8585',
-      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
-      'Access-Control-Allow-Headers': 'X-Requested-With,content-type'
-    });
-    const options = { headers: headers };
 
     return this.http.post('http://localhost:8585//usuarios/login', {
       email: userEmail,
       password: pass,
-    }, options );
+    });
   }
 
 
